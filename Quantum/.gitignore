@@ -72,5 +72,3 @@ config.json
 
 #Remove vscode files
 .vscode
-
-database.db
