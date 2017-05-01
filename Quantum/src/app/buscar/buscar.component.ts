@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api/api';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -9,19 +8,23 @@ import { DataService } from '../services/data.service';
 
 export class BuscarComponent implements OnInit {
 
-  	constructor( private api : ApiService, private dataService : DataService ) { }
+  	constructor( private dataService : DataService ) { }
 
-	texto:string = 'Hola';
+	texto:string = '';
 	obj = [];
+	raw:string = '';
 
-  	ngOnInit ( ) {
-		this.dataService.fetchData().subscribe(
+  	ngOnInit () {}
+
+	search(){
+		this.dataService.fetchData(this.texto).subscribe(
 			(data) => this.obj = data
 		);
+		this.raw = this.dataService.getRawLink() + this.texto;
 	}
 
-	openLink(texto:string){
-		this.texto = this.api.JSONlink(texto);
-	}
+	get diagnostic() {
+    	return JSON.stringify(this.raw);
+  	}
 
 }

@@ -1,12 +1,23 @@
-<div>
-	<h1>Buscar</h1>
+<div class="container">
+	{{diagnostic}}
+
+	<div>
+		<h1>Buscar</h1>
+	</div>
+
+	<div class="col-xs-6">
+	   <input type="text" class="form-control" [(ngModel)]="texto" required>
+	   <button class="btn btn-primary" (click)="search()">Buscar</button>
+	 </div>
 </div>
 
-<div class="col-xs-6">
-   <input type="text" class="form-control" [(ngModel)]="texto" required>
-   <button class="btn btn-primary" (click)="openLink(texto)">Open on Browser</button>
- </div>
-
-<li *ngFor="let item of obj.items">
-	<h3>{{item.title}}</h3>
-</li>
+<div class="container">
+	<li *ngFor="let item of obj.items">
+		<div class="col-md-6">
+			<h4>{{item.title}}</h4>
+		</div>
+		<div class="col-md-6">
+			<h4>{{item.link}}</h4>
+		</div>
+	</li>
+</div>
