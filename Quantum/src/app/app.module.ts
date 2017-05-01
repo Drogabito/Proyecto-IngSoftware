@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 //components
 import { AppComponent } from './app.component';
@@ -12,14 +13,16 @@ import { BuscarComponent } from './buscar/buscar.component';
 import { HeaderComponent } from './header/header.component';
 
 //Services
-import { ApiService } from './api/api'
+import { ApiService } from './api/api';
+import { DataService } from './services/data.service';
 
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+	HttpModule
   ],
   declarations: [
     AppComponent,
@@ -28,7 +31,7 @@ import { ApiService } from './api/api'
     HeaderComponent,
     NotFoundComponent
     ],
-  providers:[ ApiService ],
+  providers:[ ApiService, DataService ],
   bootstrap: [ AppComponent ],
 })
 
