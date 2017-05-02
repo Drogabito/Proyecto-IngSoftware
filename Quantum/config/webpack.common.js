@@ -100,7 +100,11 @@ module.exports = function(options) {
                 {
                     test: /\.svg/,
                     loader: 'svg-url-loader'
-                }
+                },
+				{
+				  test: /\.(jpg|png|gif)$/,
+				  use: 'file-loader'
+				}
             ]
         },
         plugins: [
