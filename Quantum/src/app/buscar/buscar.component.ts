@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { LinkService } from '../services/link.service';
 
 @Component({
   selector: 'app-buscar',
@@ -8,7 +9,7 @@ import { DataService } from '../services/data.service';
 
 export class BuscarComponent implements OnInit {
 
-  	constructor( private dataService : DataService ) { }
+  	constructor( private dataService : DataService, private linkService : LinkService ) { }
 
 	texto:string = '';
 	obj = [];
@@ -21,6 +22,10 @@ export class BuscarComponent implements OnInit {
 			(data) => this.obj = data
 		);
 		this.raw = this.dataService.getRawLink() + this.texto;
+	}
+
+	openLink(url:string){
+		this.linkService.open(url)
 	}
 
 	get diagnostic() {

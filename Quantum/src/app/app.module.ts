@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 //Services
 import { ApiService } from './services/api';
 import { DataService } from './services/data.service';
+import { LinkService } from './services/link.service'
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { DataService } from './services/data.service';
     HeaderComponent,
     NotFoundComponent
     ],
-  providers:[ ApiService, DataService ],
+  providers:[ ApiService, DataService, LinkService ],
   bootstrap: [ AppComponent ],
 })
 

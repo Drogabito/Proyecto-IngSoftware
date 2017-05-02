@@ -1,7 +1,7 @@
 {
-  "name": "Eolinker",
+  "name": "Quantum",
   "version": "0.0.1",
-  "description": "Eolinker,a profession tool for test!",
+  "description": "Quantum",
   "main": "init.js",
   "scripts": {
 	"app":"electron dist",
