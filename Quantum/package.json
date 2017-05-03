@@ -37,13 +37,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/simplefatty/Angular2-electron-quick-start.git"
+    "url": "https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware"
   },
-  "author": "simplefatty<github@simplefatty.com>",
+  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/simplefatty/Angular2-electron-quick-start/issues"
-  },
   "homepage": "",
   "dependencies": {
     "@angular/common": "^2.4.2",
