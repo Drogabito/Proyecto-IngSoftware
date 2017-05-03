@@ -108,6 +108,11 @@ module.exports = function(options) {
             ]
         },
         plugins: [
+			new webpack.ProvidePlugin({
+				jQuery: 'jquery',
+		    	$: 'jquery',
+		    	jquery: 'jquery'
+			}),
 
             // new AssetsPlugin({
             //     path: helpers.root('src/app/dist'),
