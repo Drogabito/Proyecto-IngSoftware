@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-// Declaramos las variables para jQuery
+//jQuery
 declare var jQuery:any;
 declare var $:any;
 
+const {cheerio} = require('cheerio');
+//request está causando problemas!!!!
 let request = require('request');
-let cheerio = require('cheerio');
 
 @Component({
   selector: 'app-ver',

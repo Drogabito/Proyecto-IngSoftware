@@ -1,8 +1,8 @@
-//const { shell } = require('electron');
+const { shell } = require('electron');
 
 export class LinkService {
 
-  	/*open(url:string){
+  	open(url:string){
     	shell.openExternal(url);
-  	}*/
+  	}
 }

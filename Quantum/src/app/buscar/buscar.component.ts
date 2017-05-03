@@ -24,9 +24,9 @@ export class BuscarComponent implements OnInit {
 		this.raw = this.dataService.getRawLink() + this.texto;
 	}
 
-	/*openLink(url:string){
-		this.linkService.open(url)
-	}*/
+	openLink(url:string){
+		this.linkService.open(url);
+	}
 
 	get diagnostic() {
     	return JSON.stringify(this.raw);
