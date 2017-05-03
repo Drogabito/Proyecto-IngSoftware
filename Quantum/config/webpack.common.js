@@ -43,7 +43,7 @@ module.exports = function(options) {
              *
              * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
              */
-            extensions: ['.ts', '.js', '.json', '.css', '.html'],
+            extensions: ['.ts', '.js', '.json', '.css', '.html', '.webpack.js', '.web.js'],
 
             // An array of directory names to be resolved to the current directory
             modules: [helpers.rootNode('src'), 'node_modules'],
@@ -168,7 +168,11 @@ module.exports = function(options) {
             crypto: 'empty',
             module: false,
             clearImmediate: false,
-            setImmediate: false
+            setImmediate: false,
+			/*console: true,
+		    fs: 'empty',
+		    net: 'empty',
+		    tls: 'empty'*/
         }
     };
 }
