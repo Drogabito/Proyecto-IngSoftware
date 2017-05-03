@@ -3,8 +3,8 @@ import { DataService } from '../services/data.service';
 import { LinkService } from '../services/link.service';
 
 @Component({
-  selector: 'app-buscar',
-  templateUrl: './buscar.component.html'
+  	selector: 'app-buscar',
+  	templateUrl: './buscar.component.html'
 })
 
 export class BuscarComponent implements OnInit {
@@ -25,7 +25,7 @@ export class BuscarComponent implements OnInit {
 	}
 
 	openLink(url:string){
-		this.linkService.open(url)
+		this.linkService.open(url);
 	}
 
 	get diagnostic() {

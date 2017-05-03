@@ -37,13 +37,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/simplefatty/Angular2-electron-quick-start.git"
+    "url": "https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware"
   },
-  "author": "simplefatty<github@simplefatty.com>",
+  "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/simplefatty/Angular2-electron-quick-start/issues"
-  },
   "homepage": "",
   "dependencies": {
     "@angular/common": "^2.4.2",
@@ -62,11 +59,14 @@
     "@ngrx/store": "^2.2.1",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
+    "cheerio": "^0.22.0",
     "copy-webpack-plugin": "^4.0.1",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
+    "jquery": "^3.2.1",
     "nodemon": "^1.11.0",
+    "request": "^2.81.0",
     "rxjs": "^5.0.0-rc.1",
     "webpack-target-electron-renderer": "^0.4.0",
     "zone.js": "^0.7.2"
@@ -75,6 +75,7 @@
     "@ngrx/store-devtools": "^3.2.3",
     "@types/hammerjs": "^2.0.33",
     "@types/jasmine": "^2.2.34",
+    "@types/jquery": "^2.0.42",
     "@types/moment-timezone": "^0.2.32",
     "@types/node": "^7.0.1",
     "@types/source-map": "^0.5.0",
