@@ -1,12 +1,12 @@
 ## Quick start
 
 ```bash
-git clone https://github.com/simplefatty/Angular2-electron-quick-start.git
+https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware.git
 ```
 Instalar dependencias
 
 ```bash
-cd Quantum
+cd Proyecto-IngSoftware/Quantum
 npm install
 ```
 Run the example
