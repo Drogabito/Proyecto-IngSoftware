@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="entregable2" version="4">
+  <OBJECT>
+    <ID name="entregable2" mc="Standard.Package" uid="a6471131-00d8-45f8-a568-602b95b62567"/>
+    <PID name="Entregable2" mc="Standard.Project" uid="ceef22b3-46cf-48a0-8a36-1f2f78e1a1d1"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[entregable2]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Interaction" mc="Standard.Interaction" uid="d447dfc1-4846-4066-ab31-162bc283a1ae"/>
+        <COMPID name="Interaction1" mc="Standard.Interaction" uid="e6bca8d4-96a3-4f80-a1a2-cc22801d5e09"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="Interfaz" mc="Standard.Class" uid="47b982da-49a7-4b67-b733-14e71a38c0ab"/>
+        <COMPID name="Controlador" mc="Standard.Class" uid="448e8fb2-df64-4574-bfd7-f241c4dd9182"/>
+        <COMPID name="Gestor de Descarga" mc="Standard.Class" uid="dd5f41be-c438-4e4a-9853-d6a3ee44996d"/>
+        <COMPID name="Clasificador" mc="Standard.Class" uid="28336b28-a428-4f1b-a7b2-3188b8f7fa40"/>
+        <COMPID name="Contenido" mc="Standard.Class" uid="92d4775f-73b9-4156-b6a2-4d8e318fade4"/>
+        <COMPID name="Conversor1" mc="Standard.Class" uid="a3b2de85-03b9-4f52-98b9-4cc6f26c45d6"/>
+        <COMPID name="Conversor" mc="Standard.Interface" uid="7f936b37-cb48-44e4-9b62-ec2c7223ffee"/>
+        <COMPID name="Buscador" mc="Standard.Class" uid="580c8c21-8373-4da2-a474-8826fdad11f3"/>
+        <COMPID name="Profesor" mc="Standard.Actor" uid="6e3179c2-0c57-4bc1-b2e3-4d5cf9d0ce85"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="Diagrama de Clases" mc="Standard.ClassDiagram" uid="cd2ff1cf-5afb-4d3e-ac2e-e8b35dde6486"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
