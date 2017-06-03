@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 //jQuery
-declare var jQuery:any;
-declare var $:any;
+//declare var jQuery:any;
+//declare var $:any;
 
 let cheerio = require('cheerio');
 let request = require('request');
@@ -21,7 +21,8 @@ export class VerComponent implements OnInit{
 
 	scraping(){
 		console.log("Visiting page " + this.pageToVisit);
-		request(this.pageToVisit, (error, response, body) => {
+		const self=this;
+		request(this.pageToVisit, function(error, response, body:string) {
 		   	if(error) {
 		     	console.log("Error: " + error);
 		   	}
@@ -29,36 +30,29 @@ export class VerComponent implements OnInit{
 		   	console.log("Status code: " + response.statusCode);
 		   	if(response.statusCode === 200) {
 		    	// Parse the document body
-		     	$ = cheerio.load(body);
+		     	var cherry = cheerio.load(body);
 		     	console.log("Page title:  " + $('title').text());
-			 	collectLinks($);
+			 	self.collectLinks(cherry);
 		   	}
-
-		   function collectLinks($) {
-		     	var allRelativeLinks = [];
-		     	var allAbsoluteLinks = [];
-
-		     	var relativeLinks = $("a[href^='/']");
-		     	relativeLinks.each(function() {
-		   	  	allRelativeLinks.push($(this).attr('href'));
-
-		     	});
-
-		     	var absoluteLinks = $("a[href^='http']");
-		     	absoluteLinks.each(function() {
-		   	  	allAbsoluteLinks.push($(this).attr('href'));
-		     	});
-
-		     	console.log("Found " + allRelativeLinks.length + " relative links");
-		     	console.log("Found " + allAbsoluteLinks.length + " absolute links");
-		 	}
  		});
 	}
 
-	public mostrarTitulo(){
-		console.log("click");
+	collectLinks(cherry) {
+		 var allRelativeLinks = [];
+		 var allAbsoluteLinks = [];
 
-	   	//jQuery
-	    $(".title").slideToggle();
-  	}
+		 var relativeLinks = cherry("a[href^='/']");
+		 relativeLinks.each(function() {
+		 	allRelativeLinks.push(cherry(this).attr('href'));
+		 });
+
+		 var absoluteLinks = cherry("a[href^='http']");
+		 absoluteLinks.each(function() {
+		 allAbsoluteLinks.push(cherry(this).attr('href'));
+		 });
+
+		 console.log("Found " + allRelativeLinks.length + " relative links");
+		 console.log("Found " + allAbsoluteLinks.length + " absolute links");
+	 }
+
 }

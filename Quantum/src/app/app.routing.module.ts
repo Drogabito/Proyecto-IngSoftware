@@ -6,7 +6,7 @@ import { VerComponent } from "./ver/ver.component";
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/buscar', pathMatch: 'full' },
+  { path: '', redirectTo: '/ver', pathMatch: 'full' },
   { path: 'buscar', component: BuscarComponent },
   { path: 'ver', component: VerComponent },
   //
