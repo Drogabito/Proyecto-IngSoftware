@@ -1,44 +1,18 @@
-# Angular 2 electron starterkit featuring webpack
-
-This is a starter of angular (2 and above) and electron.Its a working demo of [electron] with [angular] using [Webpack], [ngrx]
-
-[![Build Status](https://travis-ci.org/simplefatty/Angular2-electron-quick-start.svg?branch=master)](https://travis-ci.org/simplefatty/Angular2-electron-quick-start)
-[![dependcy](https://david-dm.org/simplefatty/Angular2-electron-quick-start.svg)](https://david-dm.org/simplefatty/Angular2-electron-quick-start)
-[![dev dependcy](https://david-dm.org/simplefatty/Angular2-electron-quick-start/dev-status.svg)](https://david-dm.org/simplefatty/Angular2-electron-quick-start?type=dev)
-
-==================
 ## Quick start
 
 ```bash
-git clone https://github.com/simplefatty/Angular2-electron-quick-start.git
+https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware.git
 ```
-Install dependencies
+Instalar dependencias
 
 ```bash
-cd Angular2-electron-quick-start
+cd Proyecto-IngSoftware/Quantum
 npm install
 ```
 Run the example
 ```bash
 npm start
 ```
-
-Hot reload on electron
-```bash
-npm run watch:electron
-```
-You can also run `npm run server:dev` to start a webpack-dev-server to debug you code on browser.
-
-
-When you use Linux or OSX , you need to change the command in `package.json`,just change `set` to `export`.
-
-## DevTools
-
-Toggle DevTools:
-
-* OSX: <kbd>Cmd</kbd> <kbd>Alt</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
-* Linux: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
-* Windows: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>I</kbd> or <kbd>F12</kbd>
 
 ## Packaging(For test)
 
@@ -73,12 +47,6 @@ npm run pack:win
 npm run pack:linux
 ```
 
-## Tests
-
-```
-npm run test
-```
-
 ## License
 
 [MIT]
@@ -88,5 +56,4 @@ npm run test
 [angular2]: http://angular.io
 [electron]: http://electron.atom.io/
 [ngrx]: https://github.com/ngrx/store
-[material2]: https://github.com/angular/material2
 [electron-packager]: https://github.com/electron-userland/electron-packager

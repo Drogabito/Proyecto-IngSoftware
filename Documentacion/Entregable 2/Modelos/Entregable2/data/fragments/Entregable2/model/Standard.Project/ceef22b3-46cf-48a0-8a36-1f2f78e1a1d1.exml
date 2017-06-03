@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Entregable2" version="4">
+  <OBJECT>
+    <ID name="Entregable2" mc="Standard.Project" uid="ceef22b3-46cf-48a0-8a36-1f2f78e1a1d1"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[Entregable2]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="entregable2" mc="Standard.Package" uid="a6471131-00d8-45f8-a568-602b95b62567"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="Entregable2" mc="Infrastructure.DiagramSet" uid="cc08dd97-dc44-4ef0-8d85-801176892fb2"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
