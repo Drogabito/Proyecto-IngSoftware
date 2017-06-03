@@ -6,6 +6,7 @@ declare var $:any;
 
 let cheerio = require('cheerio');
 let request = require('request');
+let URL = require('url-parse');
 
 @Component({
   selector: 'app-ver',
@@ -14,52 +15,44 @@ let request = require('request');
 export class VerComponent implements OnInit{
 
 	title = 'Probando jQuery';
-	resultado = "nada";
+	pageToVisit = "http://www.arstechnica.com";
 
   	ngOnInit() {}
 
-	result(){
-		console.log(this.resultado);
-	}
-
 	scraping(){
-		console.log("Scraping");
-		request('https://news.ycombinator.com', function (error, response, html) {
-			if (!error && response.statusCode == 200) {
-			    var $ = cheerio.load(html);
-			    var parsedResults = [];
-			    $('span.comhead').each(function(i, element){
-			      	// Select the previous element
-			      	var a = $(this).prev();
-			      	// Get the rank by parsing the element two levels above the "a" element
-			      	var rank = a.parent().parent().text();
-			      	// Parse the link title
-			      	var title = a.text();
-			      	// Parse the href attribute from the "a" element
-			      	var url = a.attr('href');
-			      	// Get the subtext children from the next row in the HTML table.
-			      	var subtext = a.parent().parent().next().children('.subtext').children();
-			      	// Extract the relevant data from the children
-			      	var points = $(subtext).eq(0).text();
-			      	var username = $(subtext).eq(1).text();
-			      	var comments = $(subtext).eq(2).text();
-			      	// Our parsed meta data object
-			      	var metadata = {
-			        	rank: parseInt(rank),
-			        	title: title,
-			        	url: url,
-			        	points: parseInt(points),
-			        	username: username,
-			        	comments: parseInt(comments)
-			      	};
-			      	// Push meta-data into parsedResults array
-			      	parsedResults.push(metadata);
-			    });
-			    // Log our finished parse results in the terminal
-			    this.resultado = JSON.stringify(parsedResults);
-				console.log("listo");
-			}
-		})
+		console.log("Visiting page " + this.pageToVisit);
+		request(this.pageToVisit, (error, response, body) => {
+		   	if(error) {
+		     	console.log("Error: " + error);
+		   	}
+		   	// Check status code (200 is HTTP OK)
+		   	console.log("Status code: " + response.statusCode);
+		   	if(response.statusCode === 200) {
+		    	// Parse the document body
+		     	$ = cheerio.load(body);
+		     	console.log("Page title:  " + $('title').text());
+			 	collectLinks($);
+		   	}
+
+		   function collectLinks($) {
+		     	var allRelativeLinks = [];
+		     	var allAbsoluteLinks = [];
+
+		     	var relativeLinks = $("a[href^='/']");
+		     	relativeLinks.each(function() {
+		   	  	allRelativeLinks.push($(this).attr('href'));
+
+		     	});
+
+		     	var absoluteLinks = $("a[href^='http']");
+		     	absoluteLinks.each(function() {
+		   	  	allAbsoluteLinks.push($(this).attr('href'));
+		     	});
+
+		     	console.log("Found " + allRelativeLinks.length + " relative links");
+		     	console.log("Found " + allAbsoluteLinks.length + " absolute links");
+		 	}
+ 		});
 	}
 
 	public mostrarTitulo(){
