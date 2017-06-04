@@ -10,9 +10,9 @@ let URL = require('url-parse');
 })
 export class VerComponent implements OnInit{
 
-	START_URL = 'http://www.arstechnica.com';
-	MAX_PAGES_TO_VISIT = 9;
-	SEARCH_WORD = "stemming";
+	START_URL = 'https://www.reddit.com/';
+	MAX_PAGES_TO_VISIT = 50;
+	SEARCH_WORD = "gold";
 
 	pagesVisited = {};
 	pagesToVisit = [];
@@ -21,8 +21,17 @@ export class VerComponent implements OnInit{
 	url = new URL(this.START_URL);
 	baseUrl = this.url.protocol + "//" + this.url.hostname;
 
-  	ngOnInit() {
+  	ngOnInit() {}
+
+	start(){
+		this.pagesVisited = {};
+		this.pagesToVisit = [];
+		this.numPagesVisited = 0;
+		this.url = new URL(this.START_URL);
+		this.baseUrl = this.url.protocol + "//" + this.url.hostname;
+
 		this.pagesToVisit.push(this.START_URL);
+		this.scraping();
 	}
 
 	scraping(){
@@ -63,6 +72,9 @@ export class VerComponent implements OnInit{
 					self.collectRelativeLinks(cherry);
 					self.scraping();
 				}
+			}
+			else if(response.statusCode === 404){
+				self.scraping();
 			}
 		});
 	}
