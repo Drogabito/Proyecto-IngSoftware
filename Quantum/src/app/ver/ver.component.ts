@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 let cheerio = require('cheerio');
 let request = require('request');
+let URL = require('url-parse');
 
 @Component({
   selector: 'app-ver',
@@ -9,12 +10,16 @@ let request = require('request');
 })
 export class VerComponent implements OnInit{
 
-	START_URL = "http://www.arstechnica.com";
-	MAX_PAGES_TO_VISIT = 3;
+	START_URL = 'http://www.arstechnica.com';
+	MAX_PAGES_TO_VISIT = 9;
+	SEARCH_WORD = "stemming";
 
 	pagesVisited = {};
 	pagesToVisit = [];
 	numPagesVisited = 0;
+
+	url = new URL(this.START_URL);
+	baseUrl = this.url.protocol + "//" + this.url.hostname;
 
   	ngOnInit() {
 		this.pagesToVisit.push(this.START_URL);
@@ -50,11 +55,21 @@ export class VerComponent implements OnInit{
 			console.log("Status code: " + response.statusCode);
 			if(response.statusCode === 200){
 				var cherry = cheerio.load(body);
-				self.collectAbsoluteLinks(cherry);
-				self.scraping();
+				var isWordFound = self.searchForWord(cherry, self.SEARCH_WORD);
+				if(isWordFound){
+					console.log('Word ' + self.SEARCH_WORD + ' found at page ' + url);
+				}
+				else{
+					self.collectRelativeLinks(cherry);
+					self.scraping();
+				}
 			}
-
 		});
+	}
+
+	searchForWord(cherry, word) {
+	  	var bodyText = cherry('html > body').text().toLowerCase();
+	  	return (bodyText.indexOf(word.toLowerCase()) !== -1);
 	}
 
 	collectAbsoluteLinks(cherry){
@@ -64,7 +79,15 @@ export class VerComponent implements OnInit{
 		absoluteLinks.each(function() {
 		 	self.pagesToVisit.push(cherry(this).attr('href'));
 		});
-		console.log(self.pagesToVisit.length + " pagesToVisit");
+	}
+
+	collectRelativeLinks(cherry){
+		var relativeLinks = cherry("a[href^='/']");
+
+		const self=this;
+		relativeLinks.each(function() {
+		 	self.pagesToVisit.push(self.baseUrl + cherry(this).attr('href'));
+		});
 	}
 
 }
