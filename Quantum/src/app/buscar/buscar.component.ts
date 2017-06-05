@@ -9,7 +9,7 @@ import { LinkService } from '../services/link.service';
 
 export class BuscarComponent implements OnInit {
 
-  	constructor( private dataService : DataService, private linkService : LinkService ) { }
+  	constructor( private dataService : DataService ) { }
 
 	texto:string = '';
 	obj:any[] = [];
@@ -31,14 +31,11 @@ export class BuscarComponent implements OnInit {
 		for(let i of (this.obj as any).items){
 			this.links.push(i.link);
 		}
-	}
-
-	openLink(url:string){
-		this.linkService.open(url);
+		console.log(this.links);
 	}
 
 	get diagnostic() {
-    	return JSON.stringify(this.links);
+    	return JSON.stringify(this.raw);
   	}
 
 }

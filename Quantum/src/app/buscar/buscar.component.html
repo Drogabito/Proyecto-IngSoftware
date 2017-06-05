@@ -13,27 +13,3 @@
 	   <button class="btn btn-primary" (click)="search()">Buscar</button>
 	</div>
 </div>
-
-<button (click)="imprimir()">imprimir</button>
-
-<div class="row link-content">
-	<div class="row labels">
-		<div class="col-xs-4">
-          <strong>Titulo</strong>
-        </div>
-        <div class="col-xs-4">
-          <strong>Link</strong>
-        </div>
-	</div>
-
-	<li *ngFor="let item of obj.items" class="data-li">
-		<div class="row">
-			<div class="col-xs-4">
-				{{item.title}}
-			</div>
-			<div class="col-xs-4">
-				<a class="a-hover" (click)="openLink(item.link)">{{item.link}}</a>
-			</div>
-		</div>
-	</li>
-</div>
