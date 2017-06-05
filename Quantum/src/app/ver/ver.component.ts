@@ -14,6 +14,7 @@ export class VerComponent implements OnInit{
 	MAX_PAGES_TO_VISIT = 50;
 	SEARCH_WORD = "gold";
 
+	imagesRecollected = []
 	pagesVisited = {};
 	pagesToVisit = [];
 	numPagesVisited = 0;
@@ -24,9 +25,11 @@ export class VerComponent implements OnInit{
   	ngOnInit() {}
 
 	start(){
+		this.imagesRecollected = [];
 		this.pagesVisited = {};
 		this.pagesToVisit = [];
 		this.numPagesVisited = 0;
+
 		this.url = new URL(this.START_URL);
 		this.baseUrl = this.url.protocol + "//" + this.url.hostname;
 
@@ -64,14 +67,19 @@ export class VerComponent implements OnInit{
 			console.log("Status code: " + response.statusCode);
 			if(response.statusCode === 200){
 				var cherry = cheerio.load(body);
-				var isWordFound = self.searchForWord(cherry, self.SEARCH_WORD);
+				console.log(JSON.stringify(body));
+				/*var isWordFound = self.searchForWord(cherry, self.SEARCH_WORD);
 				if(isWordFound){
 					console.log('Word ' + self.SEARCH_WORD + ' found at page ' + url);
 				}
 				else{
 					self.collectRelativeLinks(cherry);
+					self.getImages(cherry);
 					self.scraping();
-				}
+				}*/
+				self.collectRelativeLinks(cherry);
+				self.getImages(cherry);
+				self.scraping();
 			}
 			else if(response.statusCode === 404){
 				self.scraping();
@@ -100,6 +108,19 @@ export class VerComponent implements OnInit{
 		relativeLinks.each(function() {
 		 	self.pagesToVisit.push(self.baseUrl + cherry(this).attr('href'));
 		});
+	}
+
+	getImages(cherry){
+		var imgLinks = cherry("img");
+
+		const self=this;
+		imgLinks.each(function() {
+			self.imagesRecollected.push(cherry(this).attr('src'));
+		});
+	}
+
+	imprimir(){
+		console.log(this.imagesRecollected);
 	}
 
 }
