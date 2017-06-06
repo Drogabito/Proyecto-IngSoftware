@@ -1,4 +1,4 @@
-const { shell } = require('electron');
+let { shell } = require('electron');
 
 export class LinkService {
 
@@ -12,7 +12,9 @@ export class LinkService {
 
 		imgLinks.each(function() {
 			var urlLink = cherry(this).attr('src');
-
+			if(urlLink == undefined){
+				return;
+			}
 			var comp = urlLink.substr(0,2);
 			if (comp == "//"){
 				urlLink = "http:".concat(urlLink);

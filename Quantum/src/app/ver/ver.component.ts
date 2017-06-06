@@ -79,6 +79,7 @@ export class VerComponent implements OnInit{
 					self.getImages(cherry);
 					self.scraping();
 				}*/
+				self.collectAbsoluteLinks(cherry);
 				self.collectRelativeLinks(cherry);
 				self.getImages(cherry)
 				self.scraping();
