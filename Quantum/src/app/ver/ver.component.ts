@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LinkService } from '../services/link.service';
 
 let cheerio = require('cheerio');
 let request = require('request');
@@ -21,6 +22,8 @@ export class VerComponent implements OnInit{
 
 	url = new URL(this.START_URL);
 	baseUrl = this.url.protocol + "//" + this.url.hostname;
+
+	constructor( private linkService : LinkService ) { }
 
   	ngOnInit() {}
 
@@ -110,19 +113,9 @@ export class VerComponent implements OnInit{
 	}
 
 	getImages(cherry){
-		var imgLinks = cherry("img");
-
-		const self=this;
-		imgLinks.each(function() {
-			var urlLink = cherry(this).attr('src');
-			var comp = urlLink.substr(0,1);
-
-			if (comp.localeCompare("//")){
-				urlLink = urlLink.substr(2);
-			}
-
-			self.imagesRecollected.push(urlLink);
-		});
+		this.linkService.collectImages(cherry).map(
+			(data) => this.imagesRecollected = this.imagesRecollected.concat(data)
+		);
 	}
 
 	imprimir(){

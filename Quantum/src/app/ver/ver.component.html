@@ -7,11 +7,10 @@
 	<input [(ngModel)]="MAX_PAGES_TO_VISIT">
 </div>
 
-<div class="row">
+<div class="row link-content">
 	<li *ngFor="let link of imagesRecollected" class="data-li">
 		<div class="row">
-			{{link}}
-			<img [src]="link" >
+			<img src="{{link}}">
 		</div>
 	</li>
 
