@@ -11,8 +11,8 @@ let URL = require('url-parse');
 export class VerComponent implements OnInit{
 
 	START_URL = 'https://www.reddit.com/';
-	MAX_PAGES_TO_VISIT = 50;
-	SEARCH_WORD = "gold";
+	MAX_PAGES_TO_VISIT = 1;
+	SEARCH_WORD = "";
 
 	imagesRecollected = []
 	pagesVisited = {};
@@ -67,7 +67,6 @@ export class VerComponent implements OnInit{
 			console.log("Status code: " + response.statusCode);
 			if(response.statusCode === 200){
 				var cherry = cheerio.load(body);
-				console.log(JSON.stringify(body));
 				/*var isWordFound = self.searchForWord(cherry, self.SEARCH_WORD);
 				if(isWordFound){
 					console.log('Word ' + self.SEARCH_WORD + ' found at page ' + url);
@@ -78,7 +77,7 @@ export class VerComponent implements OnInit{
 					self.scraping();
 				}*/
 				self.collectRelativeLinks(cherry);
-				self.getImages(cherry);
+				self.getImages(cherry)
 				self.scraping();
 			}
 			else if(response.statusCode === 404){
@@ -115,7 +114,14 @@ export class VerComponent implements OnInit{
 
 		const self=this;
 		imgLinks.each(function() {
-			self.imagesRecollected.push(cherry(this).attr('src'));
+			var urlLink = cherry(this).attr('src');
+			var comp = urlLink.substr(0,1);
+
+			if (comp.localeCompare("//")){
+				urlLink = urlLink.substr(2);
+			}
+
+			self.imagesRecollected.push(urlLink);
 		});
 	}
 

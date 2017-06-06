@@ -1,6 +1,18 @@
-<button class="btn btn-primary" (click)="start()">Start scraping!</button>
-<button (click)="imprimir()">imprimir</button>
+<div class="row">
+	<button class="btn btn-primary" (click)="start()">Start scraping!</button>
+	<button (click)="imprimir()">imprimir</button>
 
-<input [(ngModel)]="SEARCH_WORD">
-<input [(ngModel)]="START_URL">
-<input [(ngModel)]="MAX_PAGES_TO_VISIT">
+	<input [(ngModel)]="SEARCH_WORD">
+	<input [(ngModel)]="START_URL">
+	<input [(ngModel)]="MAX_PAGES_TO_VISIT">
+</div>
+
+<div class="row">
+	<li *ngFor="let link of imagesRecollected" class="data-li">
+		<div class="row">
+			{{link}}
+			<img [src]="link" >
+		</div>
+	</li>
+
+</div>
