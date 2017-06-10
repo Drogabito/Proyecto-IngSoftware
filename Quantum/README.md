@@ -1,7 +1,12 @@
+Note: If you're on Windows, you must go to ```package.json``` file and change the word 'export' for 'set'
+
+## Requirements
+* [+ Node:6.5.0](https://nodejs.org/en/)
+
 ## Quick start
 
 ```bash
-https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware.git
+git clone https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware.git
 ```
 Instalar dependencias
 
@@ -9,42 +14,19 @@ Instalar dependencias
 cd Proyecto-IngSoftware/Quantum
 npm install
 ```
-Run the example
+Execute app
 ```bash
 npm start
 ```
 
-## Packaging(For test)
-
-The app has support for packaging using 'electron-packager'
-
+## Package App ([WineHQ](https://wiki.winehq.org/Ubuntu) necessary if packaging for windows on a non-windows OS)
 ```bash
-$ npm run package -- --all
-```
+# create electron package for ubuntu
+npm run package-linux
 
-Will run the package for OSX. You can also provide additional options to the package command such as
+# create electron package for windows
+npm run package-win
 
-*  --name : The package name
-*  --all : Will packaget the application to all the platforms
-*  --arch : Arches to be provided
-*  --icon : The icon for the app
-
-## Generate Installer
-
-Modify [electron-builder.yml](./electron-builder.yml) to edit package info.
-
-For a full list of options see: https://github.com/electron-userland/electron-builder/wiki/Options.
-
-Create a package for OSX, Windows and Linux
-```
-npm run pack
-```
-
-Or target a specific platform
-```
-npm run pack:mac
-npm run pack:win
-npm run pack:linux
 ```
 
 ## License

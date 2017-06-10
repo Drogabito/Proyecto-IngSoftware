@@ -114,7 +114,7 @@ module.exports = function(options) {
              */
             new ScriptExtHtmlWebpackPlugin({
                 defaultAttribute: 'defer'
-            }),
+            })
         ],
 
         /**

@@ -1,6 +1,5 @@
-appId: com.eolinker.www
-copyright: Eolinker co
-productName: Eolinker
+appID: com.electron.quantum
+productName: Quantum Filter
 
 asar: true
 
