@@ -1,3 +1,5 @@
+Note: If you're on Windows, you must go to ```package.json``` file and change the word 'export' for 'set'
+
 ## Quick start
 
 ```bash
