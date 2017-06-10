@@ -1,15 +1,15 @@
 ## Quick start
 
 ```bash
-https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware.git
+git clone https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware.git
 ```
-Instalar dependencias
+Install dependencies
 
 ```bash
 cd Proyecto-IngSoftware/Quantum
 npm install
 ```
-Ejecutar la App
+Execute app
 ```bash
 npm start
 ```
