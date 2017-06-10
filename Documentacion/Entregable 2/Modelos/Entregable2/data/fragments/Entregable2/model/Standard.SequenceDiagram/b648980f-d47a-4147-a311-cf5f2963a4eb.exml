@@ -1,0 +1,186 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="buscarInformación" version="4">
+  <OBJECT>
+    <ID name="buscarInformación" mc="Standard.SequenceDiagram" uid="b648980f-d47a-4147-a311-cf5f2963a4eb"/>
+    <PID name="Interaction1" mc="Standard.Interaction" uid="e6bca8d4-96a3-4f80-a1a2-cc22801d5e09"/>
+    <ATTRIBUTES>
+      <ATT name="UiDataVersion">258</ATT>
+      <ATT name="UiData"><![CDATA[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]]></ATT>
+      <ATT name="Name"><![CDATA[buscarInformación]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <LINK relation="Represented">
+        <REFOBJ>
+          <ID name="r1" mc="Standard.Lifeline" uid="c83ebc2b-e17a-4b93-8b7b-bd7ea65ca4f5"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="r2" mc="Standard.Lifeline" uid="b539c7f5-a994-4c98-8b34-59ebedfb9961"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="r3" mc="Standard.Lifeline" uid="9d914543-9ec7-40ca-b900-d5a39f0f9945"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="r4" mc="Standard.Lifeline" uid="7300dba7-8bfb-41e1-80b1-35d4d0707ed3"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="f7acc742-f19b-4856-bf10-362d8acfa419"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="mostrarContenido(keywords)" mc="Standard.Message" uid="1ae7b823-e4e6-4725-bed6-6f14a0e6db2c"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="0b5082ff-bc00-48e5-a8f2-343e64937590"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionSpecification" uid="5e37e2fa-26b1-4d34-831c-1e4c1d3d5699"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="838f9766-e216-4f22-b37a-0d3094f39a0f"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="7673ab4c-49a7-4387-921d-a1fec447c1f7"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="cb4b8ee2-6d9e-43fe-a34f-e9e846cf1055"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="50b52ce8-0e6a-41e1-a7ed-4d88e0fc9f4a"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="obtenerContenido(keywords)" mc="Standard.Message" uid="723c8e58-6467-4012-b2a0-f54ff4e23ca1"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionSpecification" uid="9099ac86-cc8a-45ba-8f13-84afb1b5af52"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="CombinedFragment" mc="Standard.CombinedFragment" uid="63c547fc-1a7d-43c0-9f5e-ddbca0866bab"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.InteractionOperand" uid="7aee3841-2a18-44de-8041-d56b954364bc"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="c76d81a9-0fad-4d6c-aa8b-46becee70183"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="mensajeError" mc="Standard.Message" uid="a2178c83-25a8-4684-99cb-dfee442890db"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionSpecification" uid="f1d0f919-c5cb-417b-baa4-830484727b18"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="751f6204-b34f-4c2b-9be0-d9f1e4d8e577"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="73ddc803-1501-4359-9273-623303d754a4"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="mensajeError" mc="Standard.Message" uid="236dc605-5916-4715-baf9-e5af8af21ce0"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionSpecification" uid="93dab3fa-a0c4-41ea-89da-e67ac36840c0"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="7a1bbb47-11e4-4914-b752-e00694d88ff4"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="2d1d0c0f-a34a-4665-8174-51d444e3993e"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="654cc1cf-0e07-4f1f-b4ec-38dcec7c1d1b"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="InteractionOperand" mc="Standard.InteractionOperand" uid="c5be0307-b209-439f-8d97-f820806c1b07"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="276e4503-5022-4395-9c05-3d1b8836a3cb"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="89ddb7e5-5b8f-4814-b7fa-e03d04a50610"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="buscar(keywords)" mc="Standard.Message" uid="1097e9d3-2d9b-4222-89bb-8db79cc9ce86"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionSpecification" uid="6705ea9f-ef87-493e-8e47-6940edec2fec"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="f3008828-d8f5-450d-83a3-5adeaece5ac6"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="3b6509cd-aac1-4c9f-85d3-1b8abf0adc58"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionSpecification" uid="2978e586-82df-475f-a39a-6fdb08549d44"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="babf18aa-0f25-4e48-a604-02b2f72b4723"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="8f40e44f-d26c-4a3d-b508-a4ca4754d023"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionSpecification" uid="b8441793-d4e8-438f-9046-8851aca8a0a5"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="f10c7b1e-afc9-4f0e-bc05-2be4ad3215ea"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="información" mc="Standard.Message" uid="fa7f873b-d82f-4b17-95de-676b567e4b3d"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="cc9513d4-935f-4dc7-8be9-887044e0c783"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="2169bc21-e349-4e6e-835a-5cd598c224ce"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionSpecification" uid="b17b0d12-61d3-419b-a789-b1e7de00a402"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="b5adde19-dda4-4c19-8558-4316e9d0f6f1"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="información" mc="Standard.Message" uid="3734ca39-3a54-4376-87b7-33c946659be1"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="facfd3c5-ff7a-4372-8c95-58f22fd8676a"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="ea75dfc5-59f0-4191-9686-e3edfff2e5b3"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="información" mc="Standard.Message" uid="2a724f70-b5e6-41a5-a05f-67bcdc3b2ab5"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="575b38ef-4f27-4f87-b2d2-c3be12fa9ce8"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="320900e6-7fa5-4169-9de7-1889ceeb1f1a"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionSpecification" uid="34985230-c9c6-418a-9f5a-5b81c1800cfa"/>
+        </REFOBJ>
+        <REFOBJ>
+          <ID name="" mc="Standard.ExecutionOccurenceSpecification" uid="1223eedf-b087-41ad-9217-b7632705628a"/>
+        </REFOBJ>
+      </LINK>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Infrastructure.Note" uid="3e49a261-e060-40c7-9d14-49e590908d61"/>
+          <ATTRIBUTES>
+            <ATT name="Content"></ATT>
+            <ATT name="MimeType"></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="Infrastructure.NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

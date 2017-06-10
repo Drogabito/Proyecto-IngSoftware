@@ -3,7 +3,7 @@
 ```bash
 git clone https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware.git
 ```
-Install dependencies
+Instalar dependencias
 
 ```bash
 cd Proyecto-IngSoftware/Quantum
