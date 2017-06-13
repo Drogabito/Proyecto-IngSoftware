@@ -1,0 +1,22 @@
+<div class="row">
+	<div class="col-xs-6">
+	   <input type="text" class="form-control" [(ngModel)]="texto" required>
+	</div>
+	<div class="col-xs-6">
+	   <button class="btn btn-primary" (click)="search()">Buscar+</button>
+	</div>
+</div>
+
+<div class="row">
+	<h1 *ngIf="pagesToVisit.length>0">Buscando en las siguientes páginas:</h1>
+	<li *ngFor="let item of pagesToVisit" class="data-li">
+		{{item}}
+	</li>
+</div>
+
+<div class="row">
+	<h1 *ngIf="imagesRecollected.length>0">Imágenes recolectadas:</h1>
+	<li *ngFor="let img of imagesRecollected" class="data-li">
+		<a *ngIf="!(error)" class="a-hover" (click)="openLink(img)"><img [src]="img" onError='this.style.display = "none"'></a>
+	</li>
+</div>

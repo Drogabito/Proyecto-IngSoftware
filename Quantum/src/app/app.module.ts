@@ -7,10 +7,11 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 
+import { HeaderComponent } from './header/header.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { VerComponent } from './ver/ver.component';
 import { BuscarComponent } from './buscar/buscar.component';
-import { HeaderComponent } from './header/header.component';
+import { Buscar2Component } from './buscar2/buscar2.component';
 
 //Services
 import { ApiService } from './services/api';
@@ -29,6 +30,7 @@ import { LinkService } from './services/link.service'
     AppComponent,
     VerComponent,
     BuscarComponent,
+	Buscar2Component,
     HeaderComponent,
     NotFoundComponent
     ],

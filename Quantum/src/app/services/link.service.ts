@@ -1,6 +1,8 @@
+import { Injectable } from '@angular/core';
 let { shell } = require('electron');
 
-export class LinkService {
+@Injectable()
+export class LinkService{
 
   	open(url:string){
     	shell.openExternal(url);
@@ -9,6 +11,7 @@ export class LinkService {
 	collectImages(cherry){
 		var imgLinks = cherry("img");
 		var img2 = [];
+		const self = this;
 
 		imgLinks.each(function() {
 			var urlLink = cherry(this).attr('src');
@@ -22,6 +25,8 @@ export class LinkService {
 
 			img2.push(urlLink);
 		});
-		return img2;
+		return img2.map(
+			(res) => res
+		);;
 	}
 }
