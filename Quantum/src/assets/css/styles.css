@@ -50,6 +50,7 @@ body{
   border:1px solid #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,.25);
   padding: 10 10;
+  list-style-type: none;
 }
 
 .mantencion{

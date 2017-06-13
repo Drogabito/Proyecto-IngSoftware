@@ -10,7 +10,7 @@
 <div class="row">
 	<h1 *ngIf="pagesToVisit.length>0">Buscando en las siguientes páginas:</h1>
 	<li *ngFor="let item of pagesToVisit" class="data-li">
-		{{item}}
+		<a class="a-hover" (click)="openLink(item)" >{{item}}</a>
 	</li>
 </div>
 
