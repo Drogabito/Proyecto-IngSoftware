@@ -1,13 +1,11 @@
 <h2>LINKS</h2>
 <div *ngIf="link">
-  <h3>"{{ link.url }}"</h3>
+  <h3>"{{ link.url }} details"</h3>
   <div>
     <label>Id: </label>{{ link.id }}</div>
   <div>
     <label>Name: </label>
     <input [(ngModel)]="link.url" placeholder="url"/>
   </div>
-  <p>
-    <button class="btn btn-default" (click)="gotoSearch()">Back</button>
-  </p>
+  <button (click)="goBack()">Back</button>
 </div>

@@ -1,30 +1,30 @@
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit, HostBinding } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Link, DataService }  from '../services/data.service';
+import { Component, OnInit }					from '@angular/core';
+import { ActivatedRoute, Params } 				from '@angular/router';
+import { Location }               				from '@angular/common';
+
+import { DataService }  						from '../services/data.service';
+import { Link }  								from '../services/link';
+
 @Component({
   templateUrl: './search-detail.component.html'
 })
-export class SearchDetailComponent implements OnInit {
-  @HostBinding('style.display')   display = 'block';
-  @HostBinding('style.position')  position = 'absolute';
-  link: Link;
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private service: DataService
-  ) {}
-  ngOnInit() {
-    this.route.params
-      // (+) converts string 'id' to a number
-      .switchMap((params: Params) => this.service.getSingleLink(+params['id']))
-      .subscribe((link: Link) => this.link = link);
-  }
-  gotoSearch() {
-    let linkId = this.link ? this.link.id : null;
-    // Pass along the hero id if available
-    // so that the HeroList component can select that hero.
-    // Include a junk 'foo' property for fun.
-    this.router.navigate(['/search', { id: linkId, foo: 'foo' }]);
-  }
+export class SearchDetailComponent implements OnInit{
+  	link: Link;
+
+	constructor(
+		private dataService: DataService,
+		private route: ActivatedRoute,
+		private location: Location
+	){}
+
+	ngOnInit(): void {
+	  this.route.params
+		.switchMap((params: Params) => this.dataService.getLink(+params['id']))
+		.subscribe(hero => this.link = hero);
+	}
+
+	goBack(): void {
+	  this.location.back();
+	}
 }

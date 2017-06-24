@@ -1,10 +1,17 @@
 <h2>Routing-Test</h2>
 <h4>Click a link</h4>
-<div class="row col-xs-6">
-  <li class="item-click list-group-item" *ngFor="let link of urls | async"
-    [class.selected]="isSelected(link)"
-    (click)="onSelect(link)">
-    <span class="badge">{{ link.id }}</span> {{ link.url }}
-  </li>
-  <button class="btn btn-default" routerLink="/ver">ir a ver</button>
+<div class="row col-xs-12">
+	<li *ngFor="let link of urls"
+	  	[class.selected]="link === selectedLink"
+	  	class="item-click list-group-item"
+	    (click)="onSelect(link)">
+	    <span class="badge">{{ link.id }}</span> {{ link.url }}
+  	</li>
+</div>
+
+<div *ngIf="selectedLink" class="row col-xs-12">
+	<h2>
+	    {{selectedLink.url | uppercase}}
+	</h2>
+	<button (click)="gotoDetail()">View Details</button>
 </div>

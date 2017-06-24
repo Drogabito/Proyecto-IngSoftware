@@ -1,15 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { ApiService } from './api';
-
-export class Link {
-  constructor(public id: number, public url: string) { }
-}
-let URLS = [
-  	new Link(1, 'https://www.facebook.com/'),
-	new Link(2, 'https://www.youtube.com/')
-];
-let urlsPromise = Promise.resolve(URLS);
+import { URLS } from './mock-data';
+import { Link } from './link';
 
 @Injectable()
 export class DataService{
@@ -20,7 +13,7 @@ export class DataService{
 		return this.http.get(this.api.url+texto).map(
 			(res) => res.json()
 		);
-}
+	}
 
 	getRawLink(){
 		return this.api.url;
@@ -28,11 +21,13 @@ export class DataService{
 
 	////
 
-	getLinks(){
-		return urlsPromise;
+	getLinks(): Promise<Link[]>{
+		return Promise.resolve(URLS);
 	}
-	getSingleLink(id: number | string) {
-	  return urlsPromise
-		.then(links => links.find(link => link.id === +id));
-	}
+
+	getLink(id: number): Promise<Link> {
+      return this.getLinks()
+                 .then(heroes => heroes.find(hero => hero.id === id));
+    }
+
 }

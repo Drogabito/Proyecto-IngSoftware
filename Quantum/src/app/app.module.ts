@@ -12,21 +12,20 @@ import { NotFoundComponent }	from './not-found/not-found.component';
 import { VerComponent } 		from './ver/ver.component';
 import { BuscarComponent } 		from './buscar/buscar.component';
 import { Buscar2Component } 	from './buscar2/buscar2.component';
-import { SearchModule }     	from './search/search.module';
+import { SearchListComponent } 	from './search/search-list.component';
+import { SearchDetailComponent } 	from './search/search-detail.component';
 
 //Services
 import { ApiService } 			from './services/api';
 import { DataService } 			from './services/data.service';
 import { LinkService } 			from './services/link.service'
 
-
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-	SearchModule,
-    AppRoutingModule,
-	HttpModule
+	HttpModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
@@ -34,6 +33,8 @@ import { LinkService } 			from './services/link.service'
     BuscarComponent,
 	Buscar2Component,
     HeaderComponent,
+	SearchDetailComponent,
+	SearchListComponent,
     NotFoundComponent
     ],
   providers:[ ApiService, DataService, LinkService ],
