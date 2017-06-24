@@ -27,6 +27,6 @@ export class SearchListComponent implements OnInit {
 	}
 
 	gotoDetail(){
-		this.router.navigate(['/detail'], this.selectedLink.id);
+		this.router.navigate(['/detail', this.selectedLink.id]);
 	}
 }
