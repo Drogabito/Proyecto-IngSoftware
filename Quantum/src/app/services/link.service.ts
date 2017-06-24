@@ -32,4 +32,27 @@ export class LinkService{
 			(res) => res
 		);;
 	}
+
+    collectTextos(cherry){
+        var buscadores = ["p"];
+        var img2 = [];
+        buscadores.forEach( function(valor, indice, array) {
+            var imgLinks = cherry(valor);
+    		const self = this;
+
+    		imgLinks.each(function() {
+    			var urlLink = cherry(this).text();
+    			if(urlLink == undefined){
+    				return;
+    			}
+    			img2.push(urlLink);
+    		});
+
+        });
+        img2 = img2.filter(word => word.length > 140 );
+
+		return img2.map(
+			(res) => res
+		);;
+	}
 }

@@ -19,6 +19,7 @@ export class VerComponent implements OnInit{
 	pagesVisited = {};
 	pagesToVisit = [];
 	numPagesVisited = 0;
+    textoscollected = [];
 
 	url = new URL(this.START_URL);
 	baseUrl = this.url.protocol + "//" + this.url.hostname;
@@ -118,6 +119,11 @@ export class VerComponent implements OnInit{
 			(data) => this.imagesRecollected = this.imagesRecollected.concat(data)
 		);
 	}
+    getTextos(cherry){
+        this.linkService.collectTextos(cherry).map(
+			(data) => this.textoscollected = this.textoscollected.concat(data)
+		);
+    }
 
 	imprimir(){
 		console.log(this.imagesRecollected);
