@@ -17,6 +17,6 @@
 <div class="row">
 	<h1 *ngIf="imagesRecollected.length>0">Imágenes recolectadas:</h1>
 	<li *ngFor="let img of imagesRecollected" class="data-li">
-		<a *ngIf="!(error)" [href]="img" class="a-hover" download><img [src]="img" onError='this.style.display = "none"'></a>
+		<a *ngIf="!(error)" [href]="img" class="a-hover" download><img [src]="img" onError='this.style.display = "none"' WIDTH=600 HEIGHT=400></a>
 	</li>
 </div>
