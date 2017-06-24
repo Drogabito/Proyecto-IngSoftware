@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 <div class="row">
 	<div class="col-xs-6">
 	   <input type="text" class="form-control" [(ngModel)]="texto" required>
@@ -28,3 +29,21 @@
 		<a *ngIf="!(error)" [href]="img" class="a-hover" download><img [src]="img" onError='this.style.display = "none"' WIDTH=600 HEIGHT=400></a>
 	</li>
 </div>
+
+<!--
+<script type="text/javascript">
+	function onClick() {
+		var pdf = new jsPDF('p', 'pt', 'letter');
+	  	pdf.canvas.height = 72 * 11;
+	  	pdf.canvas.width = 72 * 8.5;
+
+	  	pdf.fromHTML(document.body);
+
+	  	pdf.save('test.pdf');
+	};
+
+	var element = document.getElementById("clickbind");
+	element.addEventListener("click", onClick);
+</script>
+
+-->
