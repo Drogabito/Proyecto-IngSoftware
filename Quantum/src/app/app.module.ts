@@ -12,7 +12,6 @@ import { NotFoundComponent }	from './not-found/not-found.component';
 import { VerComponent } 		from './ver/ver.component';
 import { BuscarComponent } 		from './buscar/buscar.component';
 import { Buscar2Component } 	from './buscar2/buscar2.component';
-import { HeroesModule }     	from './heroes/heroes.module';
 import { SearchModule }     	from './search/search.module';
 
 //Services
@@ -25,7 +24,6 @@ import { LinkService } 			from './services/link.service'
   imports: [
     BrowserModule,
     FormsModule,
-	HeroesModule,
 	SearchModule,
     AppRoutingModule,
 	HttpModule

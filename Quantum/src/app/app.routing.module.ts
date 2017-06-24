@@ -9,11 +9,10 @@ import { HeroListComponent } from './heroes/hero-list.component';
 import { SearchListComponent } from './search/search-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/buscar2', pathMatch: 'full' },
+  { path: '', redirectTo: '/search', pathMatch: 'full' },
   { path: 'buscar', component: BuscarComponent },
   { path: 'ver', component: VerComponent },
   { path: 'buscar2', component: Buscar2Component },
-  { path: 'heroes', component: HeroListComponent },
   { path: 'search', component: SearchListComponent },
   //
   { path: '**', component: NotFoundComponent }
