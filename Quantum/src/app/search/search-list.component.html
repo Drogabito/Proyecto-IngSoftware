@@ -1,10 +1,5 @@
-<h2>Routing-Test</h2>
-<h4>Click a link</h4>
 <div>
-  <label>Hero name:</label> <input #heroName />
-  <button (click)="add(heroName.value); heroName.value=''">
-    Add
-  </button>
+	<button (click)="search()">Agregar cosas!</button>
 </div>
 <div class="row col-xs-12">
 	<li *ngFor="let link of urls"

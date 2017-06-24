@@ -15,8 +15,27 @@ export class SearchListComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void{
+		this.urls=[];
       this.getLinks();
     }
+
+	texto = ""
+	obj = []
+
+	search(){
+		this.urls=[];
+		this.dataService.fetchData(this.texto).map(
+			(data) => this.obj = data
+		).subscribe(() => {
+			this.saveLinks();
+		});
+	}
+
+	saveLinks(){
+		for(let i of (this.obj as any).items){
+			this.add(i.link);
+		}
+	}
 
 	getLinks(): void{
 		this.dataService.getLinks().then(links => this.urls = links);

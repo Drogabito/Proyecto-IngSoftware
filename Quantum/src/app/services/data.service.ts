@@ -12,15 +12,6 @@ export class DataService{
 
 	constructor( private http: Http, private api : ApiService ){ }
 
-	update(link: Link): Promise<Link> {
-	  const url = `${this.linkUrl}/${link.id}`;
-	  return this.http
-	    .put(url, JSON.stringify(link), {headers: this.headers})
-	    .toPromise()
-	    .then(() => link)
-	    .catch(this.handleError);
-	}
-
 	create(url: string): Promise<Link> {
 	  return this.http
 	    .post(this.linkUrl, JSON.stringify({url: url}), {headers: this.headers})

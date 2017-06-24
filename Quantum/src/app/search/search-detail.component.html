@@ -1,11 +1,17 @@
 <h2>LINKS</h2>
 <div *ngIf="link">
-	<h3>"{{ link.url }} details"</h3>
+
+	<h3>"{{ link.url }}"</h3>
 	<div>
-	    <label>Id: </label>{{ link.id }}</div>
-	<div>
-	    <label>Name: </label>
-	    <input [(ngModel)]="link.url" placeholder="url"/>
+	    <label>Id: </label>{{ link.id }}
 	</div>
-	<button (click)="save()">Save</button>
+
+	<button (click)="goBack()">Back</button>
+
+	<div class="row">
+		<h1 *ngIf="imagesRecollected.length>0">Imágenes recolectadas:</h1>
+		<li *ngFor="let img of imagesRecollected" class="data-li">
+			<a *ngIf="!(error)" class="a-hover" (click)="openLink(img)"><img [src]="img" onError='this.style.display = "none"'></a>
+		</li>
+	</div>
 </div>
