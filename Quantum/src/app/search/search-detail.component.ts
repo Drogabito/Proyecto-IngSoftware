@@ -3,10 +3,9 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Link, DataService }  from '../services/data.service';
 @Component({
-  templateUrl: './hero-detail.component.html'
+  templateUrl: './search-detail.component.html'
 })
 export class SearchDetailComponent implements OnInit {
-  @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('style.display')   display = 'block';
   @HostBinding('style.position')  position = 'absolute';
   link: Link;
