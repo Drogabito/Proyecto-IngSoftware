@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 let { shell } = require('electron');
+let urel = require('url')
 
 @Injectable()
 export class LinkService{
@@ -8,22 +9,24 @@ export class LinkService{
     	shell.openExternal(url);
   	}
 
-	collectImages(cherry){
+	collectImages(cherry, url){
 		var imgLinks = cherry("img");
 		var img2 = [];
 		const self = this;
+        // myurl = new URL(url);
+        //var baseUrl = myurl.protocol + "//" + myurl.hostname;
 
 		imgLinks.each(function() {
 			var urlLink = cherry(this).attr('src');
 			if(urlLink == undefined){
 				return;
 			}
-			var comp = urlLink.substr(0,2);
+			/*var comp = urlLink.substr(0,2);
 			if (comp == "//"){
 				urlLink = "http:".concat(urlLink);
-			}
-
-			img2.push(urlLink);
+			}*/
+            console.log(urel.resolve(url, urlLink));
+			img2.push(urel.resolve(url, urlLink));
 		});
 		return img2.map(
 			(res) => res
