@@ -5,14 +5,18 @@ import { BuscarComponent } from './buscar/buscar.component';
 import { Buscar2Component } from './buscar2/buscar2.component';
 import { VerComponent } from "./ver/ver.component";
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HeroListComponent } from './heroes/hero-list.component';
+import { SearchListComponent } from './search/search-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/buscar2', pathMatch: 'full' },
   { path: 'buscar', component: BuscarComponent },
   { path: 'ver', component: VerComponent },
-  { path : 'buscar2', component: Buscar2Component },
+  { path: 'buscar2', component: Buscar2Component },
+  { path: 'heroes', component: HeroListComponent },
+  { path: 'search', component: SearchListComponent },
   //
-  {path:'**', component: NotFoundComponent}
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
