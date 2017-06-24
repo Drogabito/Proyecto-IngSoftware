@@ -28,7 +28,9 @@ import { LinkService } 			from './services/link.service'
     BrowserModule,
     FormsModule,
 	HttpModule,
-	InMemoryWebApiModule.forRoot(InMemoryDataService),
+	InMemoryWebApiModule.forRoot(InMemoryDataService, {
+		passThruUnknownUrl: true
+	}),
     AppRoutingModule
   ],
   declarations: [

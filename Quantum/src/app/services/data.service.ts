@@ -54,7 +54,7 @@ export class DataService{
 	/////
 
 	fetchData(texto:string){
-		return this.http.get(this.api.url+texto).map(
+		return this.http.get("./assets/test.json"/*this.api.url+texto*/).map(
 			(res) => res.json()
 		);
 	}
