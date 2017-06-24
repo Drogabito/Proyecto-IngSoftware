@@ -14,6 +14,14 @@
 	</li>
 </div>
 
+
+<div class="row">
+	<h1 *ngIf="textoscollected.length>0">Textos recolectadas:</h1>
+	<li *ngFor="let textito of textoscollected" class="data-li">
+		{{textito}}
+	</li>
+</div>
+
 <div class="row">
 	<h1 *ngIf="imagesRecollected.length>0">Imágenes recolectadas:</h1>
 	<li *ngFor="let img of imagesRecollected" class="data-li">

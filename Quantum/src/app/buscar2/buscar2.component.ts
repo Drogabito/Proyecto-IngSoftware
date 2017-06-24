@@ -5,6 +5,7 @@ import { LinkService } from '../services/link.service';
 let cheerio = require('cheerio');
 let request = require('request');
 
+
 @Component({
 	selector: 'app-buscar2',
 	templateUrl: './buscar2.component.html'
@@ -24,6 +25,8 @@ export class Buscar2Component implements OnInit {
 	pagesToVisit = [];
 	pagesVisited = {};
 	numPagesVisited = 0;
+	textoscollected = [];
+
 
 	MAX_PAGES_TO_VISIT = 5;
 	texto = 'utfsm'
@@ -31,6 +34,7 @@ export class Buscar2Component implements OnInit {
 
 	search(){
 		this.imagesRecollected = [];
+		this.textoscollected = [];
 		this.pagesToVisit = [];
 		this.pagesVisited = {};
 		this.numPagesVisited = 0;
@@ -82,7 +86,9 @@ export class Buscar2Component implements OnInit {
 				var cherry = cheerio.load(body);
 
 				//self.collectAbsoluteLinks(cherry);
-				self.getImages(cherry)
+				self.getTextos(cherry)
+				self.getImages(cherry, url)
+
 				self.scraping();
 			}
 			else if(response.statusCode === 404){
@@ -101,8 +107,8 @@ export class Buscar2Component implements OnInit {
 		});
 	}
 
-	getImages(cherry){
-		this.linkService.collectImages(cherry).map(
+	getImages(cherry, url){
+		this.linkService.collectImages(cherry, url).map(
 			(data) => {
 				this.zone.run(() => {
 					this.imagesRecollected = this.imagesRecollected.concat(data)
@@ -110,6 +116,11 @@ export class Buscar2Component implements OnInit {
 			}
 		);
 	}
+	getTextos(cherry){
+        this.linkService.collectTextos(cherry).map(
+			(data) => this.textoscollected = this.textoscollected.concat(data)
+		);
+    }
 
 	openLink(url){
 		this.linkService.open(url);
