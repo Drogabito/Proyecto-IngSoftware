@@ -1,11 +1,11 @@
 <h2>LINKS</h2>
 <div *ngIf="link">
-  <h3>"{{ link.url }} details"</h3>
-  <div>
-    <label>Id: </label>{{ link.id }}</div>
-  <div>
-    <label>Name: </label>
-    <input [(ngModel)]="link.url" placeholder="url"/>
-  </div>
-  <button (click)="goBack()">Back</button>
+	<h3>"{{ link.url }} details"</h3>
+	<div>
+	    <label>Id: </label>{{ link.id }}</div>
+	<div>
+	    <label>Name: </label>
+	    <input [(ngModel)]="link.url" placeholder="url"/>
+	</div>
+	<button (click)="save()">Save</button>
 </div>

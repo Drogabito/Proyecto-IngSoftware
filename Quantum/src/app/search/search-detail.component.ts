@@ -24,6 +24,11 @@ export class SearchDetailComponent implements OnInit{
 		.subscribe(hero => this.link = hero);
 	}
 
+	save(): void {
+	  this.dataService.update(this.link)
+	    .then(() => this.goBack());
+	}
+
 	goBack(): void {
 	  this.location.back();
 	}

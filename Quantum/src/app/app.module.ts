@@ -15,6 +15,9 @@ import { Buscar2Component } 	from './buscar2/buscar2.component';
 import { SearchListComponent } 	from './search/search-list.component';
 import { SearchDetailComponent } 	from './search/search-detail.component';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './services/in-memory-data.service';
+
 //Services
 import { ApiService } 			from './services/api';
 import { DataService } 			from './services/data.service';
@@ -25,6 +28,7 @@ import { LinkService } 			from './services/link.service'
     BrowserModule,
     FormsModule,
 	HttpModule,
+	InMemoryWebApiModule.forRoot(InMemoryDataService),
     AppRoutingModule
   ],
   declarations: [

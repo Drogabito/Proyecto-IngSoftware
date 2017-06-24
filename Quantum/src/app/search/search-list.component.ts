@@ -10,7 +10,7 @@ export class SearchListComponent implements OnInit {
 	selectedLink: Link;
 
 	constructor(
-		private service: DataService,
+		private dataService: DataService,
 		private router: Router
 	) {}
 
@@ -19,7 +19,7 @@ export class SearchListComponent implements OnInit {
     }
 
 	getLinks(): void{
-		this.service.getLinks().then(links => this.urls = links);
+		this.dataService.getLinks().then(links => this.urls = links);
 	}
 
 	onSelect(link: Link): void {
@@ -29,4 +29,15 @@ export class SearchListComponent implements OnInit {
 	gotoDetail(){
 		this.router.navigate(['/detail', this.selectedLink.id]);
 	}
+
+	add(name: string): void {
+	  name = name.trim();
+	  if (!name) { return; }
+	  this.dataService.create(name)
+	    .then(link => {
+	      this.urls.push(link);
+	      this.selectedLink = null;
+	    });
+	}
+
 }
