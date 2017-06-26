@@ -15,7 +15,7 @@ export class SearchListComponent implements OnInit {
 
 	ngOnInit(): void{
 		this.urls=[];
-      this.getLinks();
+      	this.getLinks();
     }
 
 	texto = "test";
