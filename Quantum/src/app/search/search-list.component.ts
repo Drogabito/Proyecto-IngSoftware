@@ -7,7 +7,6 @@ import { Link } from '../services/link';
 })
 export class SearchListComponent implements OnInit {
 	urls: Link[];
-	selectedLink: Link;
 
 	constructor(
 		private dataService: DataService,
@@ -19,11 +18,11 @@ export class SearchListComponent implements OnInit {
       this.getLinks();
     }
 
-	texto = ""
-	obj = []
+	texto = "test";
+	obj = [];
 
 	search(){
-		this.urls=[];
+		this.clear();
 		this.dataService.fetchData(this.texto).map(
 			(data) => this.obj = data
 		).subscribe(() => {
@@ -41,12 +40,8 @@ export class SearchListComponent implements OnInit {
 		this.dataService.getLinks().then(links => this.urls = links);
 	}
 
-	onSelect(link: Link): void {
-		this.selectedLink = link
-	}
-
-	gotoDetail(){
-		this.router.navigate(['/detail', this.selectedLink.id]);
+	gotoDetail(link){
+		this.router.navigate(['/detail', link.id]);
 	}
 
 	add(name: string): void {
@@ -55,8 +50,12 @@ export class SearchListComponent implements OnInit {
 	  this.dataService.create(name)
 	    .then(link => {
 	      this.urls.push(link);
-	      this.selectedLink = null;
 	    });
+	}
+
+	clear(): void {
+	  this.dataService.deleteAll();
+	  this.urls=[];
 	}
 
 }

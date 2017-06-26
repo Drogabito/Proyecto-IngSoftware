@@ -42,10 +42,23 @@ export class DataService{
 		return Promise.reject(error.message || error);
 	}
 
+	deleteAll(): Promise<void> {
+	  const url = `commands/resetdb`;
+	  return this.http.delete(url, {headers: this.headers})
+	    .toPromise()
+	    .then(() => null)
+	    .catch(this.handleError);
+	}
+
 	/////
 
 	fetchData(texto:string){
-		return this.http.get("./assets/test.json"/*this.api.url+texto*/).map(
+		var url = this.api.url+texto;
+		var test = "./assets/test.json";
+		if(texto == "test"){
+			url = test
+		}
+		return this.http.get(url).map(
 			(res) => res.json()
 		);
 	}

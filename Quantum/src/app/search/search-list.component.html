@@ -1,18 +1,17 @@
-<div>
-	<button (click)="search()">Agregar cosas!</button>
+<div class="row">
+	<div class="col-xs-6">
+	   <input type="text" class="form-control" [(ngModel)]="texto" required>
+	</div>
+	<div class="col-xs-6">
+	   <button class="btn btn-primary" (click)="search()">Buscar</button>
+	   <button class="btn btn-warning" (click)="clear()">Limpiar</button>
+	</div>
 </div>
 <div class="row col-xs-12">
 	<li *ngFor="let link of urls"
-	  	[class.selected]="link === selectedLink"
 	  	class="item-click list-group-item"
-	    (click)="onSelect(link)">
-	    <span class="badge">{{ link.id }}</span> {{ link.url }}
+	    (click)="gotoDetail(link)">
+	    {{ link.url }}
+		<span class="badge">{{ link.id }}</span>
   	</li>
-</div>
-
-<div *ngIf="selectedLink" class="row col-xs-12">
-	<h2>
-	    {{selectedLink.url | uppercase}}
-	</h2>
-	<button (click)="gotoDetail()">View Details</button>
 </div>

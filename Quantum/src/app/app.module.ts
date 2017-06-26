@@ -10,7 +10,6 @@ import { AppRoutingModule } 	from './app.routing.module';
 import { HeaderComponent } 		from './header/header.component';
 import { NotFoundComponent }	from './not-found/not-found.component';
 import { VerComponent } 		from './ver/ver.component';
-import { BuscarComponent } 		from './buscar/buscar.component';
 import { Buscar2Component } 	from './buscar2/buscar2.component';
 import { SearchListComponent } 	from './search/search-list.component';
 import { SearchDetailComponent } 	from './search/search-detail.component';
@@ -36,7 +35,6 @@ import { LinkService } 			from './services/link.service'
   declarations: [
     AppComponent,
     VerComponent,
-    BuscarComponent,
 	Buscar2Component,
     HeaderComponent,
 	SearchDetailComponent,
