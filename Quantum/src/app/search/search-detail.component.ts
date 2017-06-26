@@ -65,9 +65,7 @@ export class SearchDetailComponent implements OnInit{
 
 	getTextos(cherry){
 		this.dataService.collectTextos(cherry).map(
-			this.zone.run(() => {
-				(data) => this.textCollected = this.textCollected.concat(data)
-			})
+			(data) => this.textCollected = this.textCollected.concat(data)
 		);
 	}
 

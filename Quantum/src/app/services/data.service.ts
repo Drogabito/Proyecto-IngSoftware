@@ -86,7 +86,6 @@ export class DataService{
 			}
 			img2.push(urel.resolve(url, urlLink));
 		});
-		console.log(img2);
 		return img2.map(
 			(res) => res
 		);;
@@ -109,11 +108,10 @@ export class DataService{
 
 		});
 		texts = texts.filter(word => word.length > 140 );
-		console.log(texts);
 
 		return texts.map(
 			(res) => res
-		);;
+		);
 	}
 
 }
