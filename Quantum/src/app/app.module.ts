@@ -20,7 +20,6 @@ import { InMemoryDataService }  from './services/in-memory-data.service';
 //Services
 import { ApiService } 			from './services/api';
 import { DataService } 			from './services/data.service';
-import { LinkService } 			from './services/link.service'
 
 @NgModule({
   imports: [
@@ -41,7 +40,7 @@ import { LinkService } 			from './services/link.service'
 	SearchListComponent,
     NotFoundComponent
     ],
-  providers:[ ApiService, DataService, LinkService ],
+  providers:[ ApiService, DataService ],
   bootstrap: [ AppComponent ],
 })
 

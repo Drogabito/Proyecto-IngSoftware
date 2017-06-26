@@ -4,6 +4,8 @@ import { Headers, Http } from '@angular/http';
 import { ApiService } from './api';
 import { Link } from './link';
 
+let { shell } = require('electron');
+
 @Injectable()
 export class DataService{
 
@@ -12,9 +14,9 @@ export class DataService{
 
 	constructor( private http: Http, private api : ApiService ){ }
 
-	create(url: string): Promise<Link> {
+	create(url: string, title: string, snippet: string): Promise<Link> {
 	  return this.http
-	    .post(this.linkUrl, JSON.stringify({url: url}), {headers: this.headers})
+	    .post(this.linkUrl, JSON.stringify({url: url, title: title, snippet: snippet}), {headers: this.headers})
 	    .toPromise()
 	    .then(res => res.json().data as Link)
 	    .catch(this.handleError);
@@ -65,6 +67,32 @@ export class DataService{
 
 	getRawLink(){
 		return this.api.url;
+	}
+
+	open(url:string){
+		shell.openExternal(url);
+	}
+
+	collectImages(cherry){
+		var imgLinks = cherry("img");
+		var img2 = [];
+		const self = this;
+
+		imgLinks.each(function() {
+			var urlLink = cherry(this).attr('src');
+			if(urlLink == undefined){
+				return;
+			}
+			var comp = urlLink.substr(0,2);
+			if (comp == "//"){
+				urlLink = "http:".concat(urlLink);
+			}
+
+			img2.push(urlLink);
+		});
+		return img2.map(
+			(res) => res
+		);;
 	}
 
 }

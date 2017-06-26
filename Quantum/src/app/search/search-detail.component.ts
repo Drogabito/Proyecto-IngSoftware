@@ -5,7 +5,6 @@ import { Location }               		from '@angular/common';
 
 import { DataService }  				from '../services/data.service';
 import { Link }  						from '../services/link';
-import { LinkService } 					from '../services/link.service';
 
 let cheerio = require('cheerio');
 let request = require('request');
@@ -21,8 +20,7 @@ export class SearchDetailComponent implements OnInit{
 	constructor(
 		private dataService: DataService,
 		private route: ActivatedRoute,
-		private location: Location,
-		private linkService: LinkService
+		private location: Location
 	){
 		this.zone = new NgZone({enableLongStackTrace: false});
 	}
@@ -56,7 +54,7 @@ export class SearchDetailComponent implements OnInit{
 	}
 
 	getImages(cherry){
-		this.linkService.collectImages(cherry).map(
+		this.dataService.collectImages(cherry).map(
 			(data) => {
 				this.zone.run(() => {
 					this.imagesRecollected = this.imagesRecollected.concat(data)

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LinkService } from '../services/link.service';
+import { DataService } from '../services/data.service';
 
 let cheerio = require('cheerio');
 let request = require('request');
@@ -23,7 +23,7 @@ export class VerComponent implements OnInit{
 	url = new URL(this.START_URL);
 	baseUrl = this.url.protocol + "//" + this.url.hostname;
 
-	constructor( private linkService : LinkService ) { }
+	constructor( private linkService : DataService ) { }
 
   	ngOnInit() {}
 

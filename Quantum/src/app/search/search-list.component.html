@@ -1,17 +1,20 @@
 <div class="row">
-	<div class="col-xs-6">
-	   <input type="text" class="form-control" [(ngModel)]="texto" required>
-	</div>
-	<div class="col-xs-6">
-	   <button class="btn btn-primary" (click)="search()">Buscar</button>
-	   <button class="btn btn-warning" (click)="clear()">Limpiar</button>
-	</div>
+	<form #f="ngForm" (submit)="search(texto)">
+		<input type="text" class="w3-input w3-border" [(ngModel)]="texto" name="name" placeholder="Ingresar" required/>
+		<button type="submit" class="btn btn-default" [disabled]="!f.form.valid">
+			<i class="fa fa-search" aria-hidden="true"></i>
+		</button>
+		<button class="btn btn-primary" (click)="clear()">
+			Limpiar
+		</button>
+	</form>
 </div>
-<div class="row col-xs-12">
-	<li *ngFor="let link of urls"
-	  	class="item-click list-group-item"
-	    (click)="gotoDetail(link)">
-	    {{ link.url }}
-		<span class="badge">{{ link.id }}</span>
+
+<div class="row">
+	<li *ngFor="let link of urls" class="data-li">
+	    <a class="a-hover" (click)="gotoDetail(link)">
+			<h3><label>{{ link.title }}</label></h3>
+		</a>
+		<i>{{ link.snippet }}</i>
   	</li>
 </div>

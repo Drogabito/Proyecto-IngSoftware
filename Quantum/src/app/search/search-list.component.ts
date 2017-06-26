@@ -21,9 +21,10 @@ export class SearchListComponent implements OnInit {
 	texto = "test";
 	obj = [];
 
-	search(){
+	search(texto: string){
+		this.texto = "";
 		this.clear();
-		this.dataService.fetchData(this.texto).map(
+		this.dataService.fetchData(texto).map(
 			(data) => this.obj = data
 		).subscribe(() => {
 			this.saveLinks();
@@ -32,7 +33,7 @@ export class SearchListComponent implements OnInit {
 
 	saveLinks(){
 		for(let i of (this.obj as any).items){
-			this.add(i.link);
+			this.add(i.link, i.title, i.snippet);
 		}
 	}
 
@@ -44,10 +45,10 @@ export class SearchListComponent implements OnInit {
 		this.router.navigate(['/detail', link.id]);
 	}
 
-	add(name: string): void {
+	add(name: string, title: string, snippet: string): void {
 	  name = name.trim();
 	  if (!name) { return; }
-	  this.dataService.create(name)
+	  this.dataService.create(name, title, snippet)
 	    .then(link => {
 	      this.urls.push(link);
 	    });
