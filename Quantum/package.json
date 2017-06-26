@@ -7,15 +7,15 @@
     "build": "npm run build:dev",
     "build:dev": "webpack --config webpack.config.js --progress --profile",
     "server:dev:hmr": "npm run server:dev -- --inline --hot",
-	"electron": "electron dist",
+    "electron": "electron dist",
     "server:dev": "webpack-dev-server --config config/webpack.browser.js --progress --profile --watch --content-base src/",
     "server": "npm run server:dev",
     "start": "npm run build:dev && electron dist",
     "start:dev": "npm run server:dev",
     "start:hmr": "npm run server:dev:hmr",
     "watch:electron": "nodemon --exec \"npm run start\" --ext ts,scss,html --ignore dist/ --ignore publish/",
-	"package-linux": "npm run build && ./node_modules/electron-packager/cli.js dist App --platform=linux --arch=all --out=dist-app --overwrite",
-	"package-win": "npm run build && ./node_modules/electron-packager/cli.js dist App --platform=win32 --arch=all --out=dist-app --overwrite"
+    "package-linux": "npm run build && ./node_modules/electron-packager/cli.js dist App --platform=linux --arch=all --out=dist-app --overwrite",
+    "package-win": "npm run build && ./node_modules/electron-packager/cli.js dist App --platform=win32 --arch=all --out=dist-app --overwrite"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "@angularclass/hmr-loader": "~3.0.2",
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.1",
+    "angular-in-memory-web-api": "^0.3.2",
     "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
     "cheerio": "^0.22.0",
