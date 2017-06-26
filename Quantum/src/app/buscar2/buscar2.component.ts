@@ -101,7 +101,7 @@ export class Buscar2Component implements OnInit {
 	}
 
 	getImages(cherry){
-		this.dataService.collectImages(cherry).map(
+		this.dataService.collectImages(cherry,"a").map(
 			(data) => {
 				this.zone.run(() => {
 					this.imagesRecollected = this.imagesRecollected.concat(data)

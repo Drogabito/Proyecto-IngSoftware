@@ -5,6 +5,7 @@ import { ApiService } from './api';
 import { Link } from './link';
 
 let { shell } = require('electron');
+let urel = require('url');
 
 @Injectable()
 export class DataService{
@@ -73,7 +74,7 @@ export class DataService{
 		shell.openExternal(url);
 	}
 
-	collectImages(cherry){
+	collectImages(cherry, url){
 		var imgLinks = cherry("img");
 		var img2 = [];
 		const self = this;
@@ -83,14 +84,34 @@ export class DataService{
 			if(urlLink == undefined){
 				return;
 			}
-			var comp = urlLink.substr(0,2);
-			if (comp == "//"){
-				urlLink = "http:".concat(urlLink);
-			}
-
-			img2.push(urlLink);
+			img2.push(urel.resolve(url, urlLink));
 		});
+		console.log(img2);
 		return img2.map(
+			(res) => res
+		);;
+	}
+
+	collectTextos(cherry){
+		var buscadores = ["p","h1"];
+		var texts = [];
+		buscadores.forEach( function(valor, indice, array) {
+			var imgLinks = cherry(valor);
+			const self = this;
+
+			imgLinks.each(function() {
+				var urlLink = cherry(this).text();
+				if(urlLink == undefined){
+					return;
+				}
+				texts.push(urlLink);
+			});
+
+		});
+		texts = texts.filter(word => word.length > 140 );
+		console.log(texts);
+
+		return texts.map(
 			(res) => res
 		);;
 	}

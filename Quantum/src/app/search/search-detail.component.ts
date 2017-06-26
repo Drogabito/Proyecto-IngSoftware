@@ -15,7 +15,8 @@ let request = require('request');
 export class SearchDetailComponent implements OnInit{
 	zone:NgZone;
   	link: Link;
-	imagesRecollected = []
+	imagesRecollected = [];
+	textCollected = [];
 
 	constructor(
 		private dataService: DataService,
@@ -46,20 +47,27 @@ export class SearchDetailComponent implements OnInit{
 			console.log("Status code: " + response.statusCode);
 			if(response.statusCode === 200){
 				var cherry = cheerio.load(body);
-
-				//self.collectAbsoluteLinks(cherry);
-				self.getImages(cherry)
+				self.getTextos(cherry);
+				self.getImages(cherry, self.link.url);
 			}
 		});
 	}
 
-	getImages(cherry){
-		this.dataService.collectImages(cherry).map(
+	getImages(cherry, url){
+		this.dataService.collectImages(cherry, url).map(
 			(data) => {
 				this.zone.run(() => {
 					this.imagesRecollected = this.imagesRecollected.concat(data)
 				})
 			}
+		);
+	}
+
+	getTextos(cherry){
+		this.dataService.collectTextos(cherry).map(
+			this.zone.run(() => {
+				(data) => this.textCollected = this.textCollected.concat(data)
+			})
 		);
 	}
 

@@ -12,9 +12,16 @@
 	<button (click)="goBack()">Back</button>
 
 	<div class="row">
+		<h1 *ngIf="textCollected.length>0">Textos recolectadas:</h1>
+		<li *ngFor="let texto of textCollected" class="data-li">
+			{{texto}}
+		</li>
+	</div>
+
+	<div class="row">
 		<h1 *ngIf="imagesRecollected.length>0">Imágenes recolectadas:</h1>
 		<li *ngFor="let img of imagesRecollected" class="data-li">
-			<a *ngIf="!(error)" class="a-hover" (click)="openLink(img)"><img [src]="img" onError='this.style.display = "none"'></a>
+			<a *ngIf="!(error)" class="a-hover"><img [src]="img" onError='this.style.display = "none"'></a>
 		</li>
 	</div>
 </div>
