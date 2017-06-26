@@ -16,7 +16,7 @@ if (app !== undefined) {
 
   const createWindow = () => {
     // Initialize the window to our specified dimensions
-    mainWindow = new BrowserWindow({ width: 800, height: 600 });
+    mainWindow = new BrowserWindow({ width: 960, height: 640 });
 
     // Tell Electron where to load the entry point from
     mainWindow.loadURL('file://' + __dirname + '/index.html');

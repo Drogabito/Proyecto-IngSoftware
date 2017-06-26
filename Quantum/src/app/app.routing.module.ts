@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BuscarComponent } from './buscar/buscar.component';
-import { Buscar2Component } from './buscar2/buscar2.component';
-import { VerComponent } from "./ver/ver.component";
-import { NotFoundComponent } from './not-found/not-found.component';
+import { Buscar2Component } 		from './buscar2/buscar2.component';
+import { VerComponent }				from "./ver/ver.component";
+import { NotFoundComponent } 		from './not-found/not-found.component';
+import { SearchListComponent } 		from './search/search-list.component';
+import { SearchDetailComponent } 		from './search/search-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/buscar2', pathMatch: 'full' },
-  { path: 'buscar', component: BuscarComponent },
+  { path: '', redirectTo: '/search', pathMatch: 'full' },
+  { path: 'detail/:id', component: SearchDetailComponent },
   { path: 'ver', component: VerComponent },
-  { path : 'buscar2', component: Buscar2Component },
+  { path: 'buscar2', component: Buscar2Component },
+  { path: 'search', component: SearchListComponent },
   //
-  {path:'**', component: NotFoundComponent}
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

@@ -1,6 +1,5 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { DataService } from '../services/data.service';
-import { LinkService } from '../services/link.service';
 
 let cheerio = require('cheerio');
 let request = require('request');
@@ -14,7 +13,7 @@ export class Buscar2Component implements OnInit {
 
 	zone:NgZone;
 
-	constructor( private dataService: DataService, private linkService: LinkService ) {
+	constructor( private dataService: DataService ) {
 		this.zone = new NgZone({enableLongStackTrace: false});
 	}
 
@@ -102,17 +101,13 @@ export class Buscar2Component implements OnInit {
 	}
 
 	getImages(cherry){
-		this.linkService.collectImages(cherry).map(
+		this.dataService.collectImages(cherry,"a").map(
 			(data) => {
 				this.zone.run(() => {
 					this.imagesRecollected = this.imagesRecollected.concat(data)
 				})
 			}
 		);
-	}
-
-	openLink(url){
-		this.linkService.open(url);
 	}
 
 }

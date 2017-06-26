@@ -1,0 +1,27 @@
+<h2>LINKS</h2>
+<div *ngIf="link">
+
+	<h3>"{{ link.url }}"</h3>
+	<div>
+	    <label>Id: </label>{{ link.id }}
+		<label>Title: </label>{{ link.title }}
+		<label>Snippet: </label>{{ link.snippet }}
+
+	</div>
+
+	<button (click)="goBack()">Back</button>
+
+	<div class="row">
+		<h1 *ngIf="textCollected.length>0">Textos recolectadas:</h1>
+		<li *ngFor="let texto of textCollected" class="data-li">
+			{{texto}}
+		</li>
+	</div>
+
+	<div class="row">
+		<h1 *ngIf="imagesRecollected.length>0">Imágenes recolectadas:</h1>
+		<li *ngFor="let img of imagesRecollected" class="data-li">
+			<a *ngIf="!(error)" [href]="img" class="a-hover" download><img [src]="img" WIDTH=600 HEIGHT=480></a>
+		</li>
+	</div>
+</div>

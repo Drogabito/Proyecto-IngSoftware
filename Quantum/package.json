@@ -4,11 +4,10 @@
   "description": "Quantum",
   "main": "init.js",
   "scripts": {
-    "app": "electron dist",
-    "postinstall": "install-app-deps",
     "build": "npm run build:dev",
-    "build:dev": "export NODE_ENV=development&&webpack --config config/webpack.dev.js --progress --profile",
+    "build:dev": "webpack --config webpack.config.js --progress --profile",
     "server:dev:hmr": "npm run server:dev -- --inline --hot",
+	"electron": "electron dist",
     "server:dev": "webpack-dev-server --config config/webpack.browser.js --progress --profile --watch --content-base src/",
     "server": "npm run server:dev",
     "start": "npm run build:dev && electron dist",
