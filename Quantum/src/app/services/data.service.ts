@@ -4,7 +4,6 @@ import { Headers, Http } from '@angular/http';
 import { ApiService } from './api';
 import { Link } from './link';
 
-let { shell } = require('electron');
 let urel = require('url');
 
 @Injectable()
@@ -68,10 +67,6 @@ export class DataService{
 
 	getRawLink(){
 		return this.api.url;
-	}
-
-	open(url:string){
-		shell.openExternal(url);
 	}
 
 	collectImages(cherry, url){

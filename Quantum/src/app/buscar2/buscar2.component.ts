@@ -110,8 +110,4 @@ export class Buscar2Component implements OnInit {
 		);
 	}
 
-	openLink(url){
-		this.dataService.open(url);
-	}
-
 }
