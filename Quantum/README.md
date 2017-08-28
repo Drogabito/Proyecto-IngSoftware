@@ -12,7 +12,7 @@ Install dependencies
 cd Proyecto-IngSoftware/Quantum
 npm install
 ```
-Execute app
+Build & execute app
 ```bash
 npm start
 ```

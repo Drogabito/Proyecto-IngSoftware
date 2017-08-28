@@ -12,7 +12,7 @@
 	<button (click)="goBack()">Back</button>
 
 	<div class="row">
-		<h1 *ngIf="textCollected.length>0">Textos recolectadas:</h1>
+		<h1 *ngIf="textCollected.length>0">Textos recolectados:</h1>
 		<li *ngFor="let texto of textCollected" class="data-li">
 			{{texto}}
 		</li>

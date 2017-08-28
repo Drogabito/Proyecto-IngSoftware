@@ -9,8 +9,7 @@ import { AppRoutingModule } 	from './app.routing.module';
 
 import { HeaderComponent } 		from './header/header.component';
 import { NotFoundComponent }	from './not-found/not-found.component';
-import { VerComponent } 		from './ver/ver.component';
-import { Buscar2Component } 	from './buscar2/buscar2.component';
+import { AboutComponent }		from './about/about.component';
 import { SearchListComponent } 	from './search/search-list.component';
 import { SearchDetailComponent } 	from './search/search-detail.component';
 
@@ -33,8 +32,7 @@ import { DataService } 			from './services/data.service';
   ],
   declarations: [
     AppComponent,
-    VerComponent,
-	Buscar2Component,
+	AboutComponent,
     HeaderComponent,
 	SearchDetailComponent,
 	SearchListComponent,
