@@ -21,7 +21,7 @@ if (app !== undefined) {
     // Tell Electron where to load the entry point from
     mainWindow.loadURL('file://' + __dirname + '/index.html');
 
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
 
     // Clear out the main window when the app is closed
     mainWindow.on('closed', () => {

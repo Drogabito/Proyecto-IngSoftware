@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit, NgZone }			from '@angular/core';
+import { Component, OnInit, NgZone }	from '@angular/core';
 import { ActivatedRoute, Params } 		from '@angular/router';
 import { Location }               		from '@angular/common';
 

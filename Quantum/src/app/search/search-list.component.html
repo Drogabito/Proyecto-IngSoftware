@@ -1,12 +1,16 @@
 <div class="row">
 	<form #f="ngForm" (submit)="search(texto)">
-		<input type="text" class="w3-input w3-border" [(ngModel)]="texto" name="name" placeholder="Ingresar" required/>
-		<button type="submit" class="btn btn-default" [disabled]="!f.form.valid">
-			<i class="fa fa-search" aria-hidden="true"></i>
-		</button>
-		<button type="button"class="btn btn-primary" (click)="clear()">
-			Limpiar
-		</button>
+		<div class="input-group">
+			<input type="text" class="form-control" [(ngModel)]="texto" name="name" placeholder="Ingresar" required/>
+			<span class="input-group-btn">
+				<button type="submit" class="btn btn-primary" [disabled]="!f.form.valid">
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</button>
+				<button type="button"class="btn btn-default" (click)="clear()">
+					Limpiar
+				</button>
+		    </span>
+		</div>
 	</form>
 </div>
 

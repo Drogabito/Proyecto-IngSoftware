@@ -18,11 +18,10 @@ export class SearchListComponent implements OnInit {
       	this.getLinks();
     }
 
-	texto = "";
+	texto = "test";
 	obj = [];
 
 	search(texto: string){
-		this.texto = "";
 		this.clear();
 		this.dataService.fetchData(texto).map(
 			(data) => this.obj = data
