@@ -5,8 +5,8 @@
 <div *ngIf="link">
 
 	<h1>
-		<span>Resultados de la Búqueda</span>
-		<button type="button" class="btn btn-primary pull-right" (click)="goBack()">
+		<span>{{ link.title }}</span>
+		<button type="button" class="btn btn-primary" (click)="goBack()">
 			Volver
 		</button>
 	</h1>
@@ -15,20 +15,34 @@
 		<i class="fa fa-spinner centered spin" style="font-size:64px"></i>
 	</div>
 
-	<div class="row">
+	<div class="row clear-li">
 		<h2 *ngIf="textCollected.length>0">Textos encontrados:</h2>
-		<li *ngFor="let texto of textCollected" class="data-li">
-			{{texto}}
+		<li *ngFor="let texto of textCollected">
+			<div class="col-sm-10 data-li">
+				{{texto}}
+			</div>
+			<div class="col-sm-1">
+				<button type="button" class="btn btn-danger pull-right" (click)="DeleteText(texto)">
+					<i class="fa fa-trash" aria-hidden="true"></i>
+				</button>
+			</div>
 		</li>
 	</div>
 
-	<div class="row">
+	<div class="row clear-li">
 		<h2 *ngIf="imagesRecollected.length>0">Imágenes encontradas:</h2>
 		<h6 *ngIf="imagesRecollected.length>0">(Haga click en la imagen para descargar)</h6>
-		<li *ngFor="let img of imagesRecollected" class="data-li">
-			<a *ngIf="!(error)" [href]="img" class="a-hover" download>
-				<img [src]="img" style="max-width:100%;max-height:100%;">
-			</a>
+		<li *ngFor="let img of imagesRecollected">
+			<div class="col-sm-10 data-li">
+				<a *ngIf="!(error)" [href]="img" class="a-hover" download>
+					<img [src]="img" style="max-width:100%;max-height:100%;">
+				</a>
+			</div>
+			<div class="col-sm-1">
+				<button type="button" class="btn btn-danger pull-right" (click)="DeleteImage(img)">
+					<i class="fa fa-trash" aria-hidden="true"></i>
+				</button>
+			</div>
 		</li>
 	</div>
 </div>

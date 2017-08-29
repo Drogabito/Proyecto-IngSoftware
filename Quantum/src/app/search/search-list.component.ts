@@ -18,7 +18,7 @@ export class SearchListComponent implements OnInit {
       	this.getLinks();
     }
 
-	texto = "test";
+	texto = "";
 	obj = [];
 
 	search(texto: string){

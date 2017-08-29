@@ -36,6 +36,22 @@ export class SearchDetailComponent implements OnInit{
 			);
 	}
 
+	DeleteText(text){
+		let index: number = this.textCollected.indexOf(text);
+		if(index != -1){
+			this.textCollected.splice(index,1);
+		}
+		this.zone = new NgZone({enableLongStackTrace: false});
+	}
+
+	DeleteImage(img){
+		let index: number = this.imagesRecollected.indexOf(img);
+		if(index != -1){
+			this.imagesRecollected.splice(index,1);
+		}
+		this.zone = new NgZone({enableLongStackTrace: false});
+	}
+
 	visitPage(){
 		const self=this;
 		console.log("Visiting page " + this.link.url);
