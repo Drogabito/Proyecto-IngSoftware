@@ -50,6 +50,7 @@ body{
   border:1px solid #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,.25);
   padding: 10 10;
+  list-style-type: none;
 }
 
 .mantencion{
@@ -109,4 +110,16 @@ body{
   background-size: cover;
   background-position: 50%;
   box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+.w3-input{
+	padding:8px;
+	display:block;
+	border:none;
+	border-bottom:1px solid #ccc;
+	width:100%
+}
+
+.w3-border{
+	border:1px solid #ccc!important
 }

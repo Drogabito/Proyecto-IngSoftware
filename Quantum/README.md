@@ -1,5 +1,3 @@
-Note: If you're on Windows, you must go to ```package.json``` file and change the word 'export' for 'set'
-
 ## Requirements
 * [+ Node:6.5.0](https://nodejs.org/en/)
 
@@ -8,13 +6,13 @@ Note: If you're on Windows, you must go to ```package.json``` file and change th
 ```bash
 git clone https://github.com/GabrielValenzuelaLorca/Proyecto-IngSoftware.git
 ```
-Instalar dependencias
+Install dependencies
 
 ```bash
 cd Proyecto-IngSoftware/Quantum
 npm install
 ```
-Execute app
+Build & execute app
 ```bash
 npm start
 ```

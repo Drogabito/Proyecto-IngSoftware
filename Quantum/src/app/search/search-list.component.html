@@ -1,0 +1,24 @@
+<div class="row">
+	<form #f="ngForm" (submit)="search(texto)">
+		<div class="input-group">
+			<input type="text" class="form-control" [(ngModel)]="texto" name="name" placeholder="Ingresar" required/>
+			<span class="input-group-btn">
+				<button type="submit" class="btn btn-primary" [disabled]="!f.form.valid">
+					<i class="fa fa-search" aria-hidden="true"></i>
+				</button>
+				<button type="button"class="btn btn-default" (click)="clear()">
+					Limpiar
+				</button>
+		    </span>
+		</div>
+	</form>
+</div>
+
+<div class="row">
+	<li *ngFor="let link of urls" class="data-li">
+	    <a class="a-hover" (click)="gotoDetail(link)">
+			<h3><label>{{ link.title }}</label></h3>
+		</a>
+		<i>{{ link.snippet }}</i>
+  	</li>
+</div>
